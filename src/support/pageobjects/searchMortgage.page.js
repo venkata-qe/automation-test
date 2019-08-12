@@ -1,7 +1,8 @@
 import Page from './page';
 
 class SearchMortgagePage extends Page {
-   get nationwideMortgageUser() { return browser.element('#selectorItemHaveNationwideMortgage0'); }
+
+    get nationwideMortgageUser() { return browser.element('#selectorItemHaveNationwideMortgage0'); }
 
    get nonNationwideMortgageUser() { return browser.element('#selectorItemHaveNationwideMortgage1'); }
 
@@ -21,9 +22,13 @@ class SearchMortgagePage extends Page {
 
    get fixedMortgageTypeCheckbox() { return browser.element('//label[contains(text(),\'Fixed rate\')]'); }
 
-   get productWithFeeCheckbox() { return browser.element('#product-fee-fee'); }
+   get productWithFeeCheckbox() { return browser.element('//label[contains(text(),\'With fee\')]'); }
 
-     isNationwideMortgageHolder(option) {
+   get updateFiltersOverlay() { return browser.element('#updatingOverlay'); }
+
+   get mortgagesSearchOverlay() { return browser.element('#searchingOverlayTitle'); }
+
+    isNationwideMortgageHolder(option) {
       if (option.toUpperCase() === "YES") {
         this.nationwideMortgageUser.waitForVisible();
         this.nationwideMortgageUser.click();
@@ -77,18 +82,19 @@ class SearchMortgagePage extends Page {
     clickMortgageRateButton() {
         this.mortgageRateButton.waitForVisible();
         this.mortgageRateButton.click();
+        this.mortgagesSearchOverlay.waitForVisible(8000, true)
     }
 
     selectFixedMortgageFilter() {
         this.fixedMortgageTypeCheckbox.waitForVisible(5000);
         this.fixedMortgageTypeCheckbox.click();
-        browser.pause(3000);
+        this.updateFiltersOverlay.waitForVisible(5000, true);
     }
 
     selectProductWithFeeFilter() {
-        this.productWithFeeCheckbox.waitForVisible(8000);
+        this.productWithFeeCheckbox.waitForVisible(5000);
         this.productWithFeeCheckbox.click();
-        browser.pause(3000)
+        this.updateFiltersOverlay.waitForVisible(5000, true);
     }
 }
 

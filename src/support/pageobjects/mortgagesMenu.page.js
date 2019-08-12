@@ -15,7 +15,7 @@ class MortgagesMenuPage extends Page {
         this.mortgageMainMenuTab.moveToObject();
     }
       selectMortgageRateOption() {
-        this.mortgageRatesLink.waitForVisible();
+        this.mortgageRatesLink.waitForVisible(3000);
         this.mortgageRatesLink.click();
     }
 }
