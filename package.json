@@ -30,7 +30,7 @@
     "grunt": "^1.0.4",
     "grunt-webdriver": "^1.0.0",
     "lodash": "^4.17.4",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "wdio-allure-reporter": "^0.6.0",
     "wdio-dot-reporter": "0.0.5",
     "wdio-json-reporter": "^0.1.1",
