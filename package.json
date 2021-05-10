@@ -29,7 +29,7 @@
     "graceful-fs": "^4.1.4",
     "grunt": "^1.0.4",
     "grunt-webdriver": "^1.0.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "underscore": "^1.8.3",
     "wdio-allure-reporter": "^0.6.0",
     "wdio-dot-reporter": "0.0.5",
